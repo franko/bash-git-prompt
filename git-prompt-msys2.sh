@@ -30,12 +30,8 @@ git_branch_name () {
   fi
 }
 
-prompt_hostname () {
-  printf "\001\e[36m\002%s" "$HOSTNAME"
-}
-
 prompt_sys () {
   printf "\001\e[35m\002$MSYSTEM\001\e[0m\002 "
 }
 
-PS1="\$(prompt_hostname) \$(git_branch_name)\$(prompt_sys)\\[\e[33m\\]\w\\[\e[0m\\]$ "
+PS1="\\[\033[01;32m\\]\u\\[\033[00m\\] \$(git_branch_name)\$(prompt_sys)\\[\e[33m\\]\w\\[\e[0m\\]$ "
