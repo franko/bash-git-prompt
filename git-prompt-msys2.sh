@@ -24,8 +24,8 @@ git_branch_name () {
     xgit_dir="${fline#gitdir: }"
     worktree_tag=" (worktree)"
   fi
-  if [ -f $xgit_dir/HEAD ]; then
-    read fline < $xgit_dir/HEAD
+  if [ -f "$xgit_dir/HEAD" ]; then
+    read fline < "$xgit_dir/HEAD"
     printf "[\001\e[34m\002${fline##*/}$worktree_tag\001\e[0m\002] "
   fi
 }
