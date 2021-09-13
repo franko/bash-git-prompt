@@ -20,7 +20,7 @@ git_branch_name () {
   local fline
   if [ -f "$xgit_dir" ]; then
     # if .git is a file it can be a worktree
-    read fline < .git
+    read fline < "$xgit_dir"
     xgit_dir="${fline#gitdir: }"
     worktree_tag=" (worktree)"
   fi
